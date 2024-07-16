@@ -8,15 +8,20 @@
 html{
     font-family: "Poppins";
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 body{
     min-height: 100vh;
+    background-color: #ffffff;
 }
 
 .head{
+    margin-top: 40px;
     font-size: 60px;
     text-align: center;
+    animation: slideDown 1s ease;
+    color: #353535;
 }
 
 .btnbox{
@@ -33,7 +38,9 @@ body{
     font-size: 20px;
     border-radius: 10px;
     padding: 5px 10px;
-    border: 2px solid gray;
+    border: 3px solid #4f5d75;
+    background-color: #2d3142;
+    color: #ffffff;
 }
 
 img{
@@ -58,18 +65,58 @@ img{
     font-size: 30px;
     border-radius: 10px;
     padding: 5px 10px;
-    border: 2px solid gray;
+    border: 3px solid #bfc0c0;
+    background-color: #ef8354;
+    color: white;
 }
 
 .score{
     text-align: center;
     font-size: 40px;
     visibility: hidden;
+    color: #353535;
 }
 
-#userimg{
-    animation-duration: 1s;
+#retry{
+    background-color: #ff5a5f;
 }
+
+#out{
+    font-weight: 600;
+}
+
+.userimg{
+    animation: useranimate 1s forwards;
+}
+
+.cpuimg{
+    animation: cpuanimate 1s forwards;
+}
+
+.fadeIn{
+    animation: fadeIn 0.5s ease;
+}
+
+.fadeOut{
+    animation: fadeOut 0.5s ease;
+}
+
+.btnbox button:hover{
+    background-color: #212430;
+    scale: 1.03;
+}
+
+.content button:hover{
+    background-color: #da784e;
+    scale: 1.03;
+}
+
+#retry:hover{
+    background-color: #ff5a5f;
+}
+
+
+
 
 @keyframes cpuanimate {
     0%{transform: rotate(0);}
@@ -85,4 +132,33 @@ img{
     75%{transform: rotate(15deg);}
 }
 
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
 
+@keyframes fadeOut {
+    from{
+        opacity: 1;
+        scale: 1;
+    }
+    to{
+        opacity: 0;
+        scale: 0.5;
+    }
+}
+
+@keyframes slideDown {
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translate(0);
+    }
+}
