@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1 class="head">Rock Paper Scissors</h1>
+    <div class="btnbox" id="btnbox">
+        <button onclick="rock()">Rock</button>
+        <button onclick="paper()">Paper</button>
+        <button onclick="scissors()">Scissors</button>
+    </div>
+    <div class="img">
+        <div class="user" id="user">
+            <img src="asset/paperplayer.png" alt="img" id="userimg">
+        </div>
+        <div class="content">
+            <button onclick="begin()" id="start">Start</button>
+            <div class="score" id="score">
+                <p>User Score:<span class="userscore" id="userscore"></span></p>
+                <p>CPU Score:<span class="cpuscore" id="cpuscore"></span></p>
+                <p class="result" id="result"></p>
+                <button onclick="retry()" id="retry">Retry</button>
+            </div>
+        </div>
+        <div class="cpu" id="cpu">
+            <img src="asset/papercpu.png" alt="img" id="cpuimg">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
