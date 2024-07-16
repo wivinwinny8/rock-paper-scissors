@@ -9,9 +9,9 @@
 <body>
     <h1 class="head">Rock Paper Scissors</h1>
     <div class="btnbox" id="btnbox">
-        <button onclick="rock()">Rock</button>
-        <button onclick="paper()">Paper</button>
-        <button onclick="scissors()">Scissors</button>
+        <button onclick="play('rock')">Rock</button>
+        <button onclick="play('paper')">Paper</button>
+        <button onclick="play('scissors')">Scissors</button>
     </div>
     <div class="img">
         <div class="user" id="user">
@@ -22,6 +22,7 @@
             <div class="score" id="score">
                 <p>User Score:<span class="userscore" id="userscore"></span></p>
                 <p>CPU Score:<span class="cpuscore" id="cpuscore"></span></p>
+                <p id="out">Play!!</p>
                 <p class="result" id="result"></p>
                 <button onclick="retry()" id="retry">Retry</button>
             </div>

@@ -20,7 +20,23 @@ function begin(){
 }
 
 
-setTimeout(rock(),3000)
+function play(val){
+    if(val=="rock"){
+        document.getElementById("cpuimg").src="/asset/rockcpu.png";
+        document.getElementById("userimg").src="/asset/rockplayer.png";
+        setTimeout(rock,1500);
+    }
+    else if(val=="paper"){
+        document.getElementById("cpuimg").src="/asset/rockcpu.png";
+        document.getElementById("userimg").src="/asset/rockplayer.png";
+        setTimeout(paper,1500);
+    }
+    else if(val=="scissors"){
+        document.getElementById("cpuimg").src="/asset/rockcpu.png";
+        document.getElementById("userimg").src="/asset/rockplayer.png";
+        setTimeout(scissors,1500);
+    }
+}
 
 function rock(){
     document.getElementById("userimg").src="/asset/rockplayer.png"
@@ -30,6 +46,7 @@ function rock(){
     if(cpuip=="rock"){
         document.getElementById("cpuimg").src="/asset/rockcpu.png";
         result="It's a Tie!";
+        document.getElementById("out").textContent=`${result}`;
         cpupts+=0;
         userpts+=0;
         updateScore(userpts,cpupts);
@@ -37,12 +54,14 @@ function rock(){
     else if(cpuip=="paper"){
         document.getElementById("cpuimg").src="/asset/papercpu.png";
         result="CPU Wins!";
+        document.getElementById("out").textContent=`${result}`;
         cpupts+=1;
         updateScore(userpts,cpupts);
     }
     else if(cpuip=="scissors"){
         document.getElementById("cpuimg").src="/asset/scissorcpu.png";
-        result="User Wins!"
+        result="User Wins!";
+        document.getElementById("out").textContent=`${result}`;
         userpts+=1;
         updateScore(userpts,cpupts);
     }
@@ -57,12 +76,14 @@ function paper(){
     if(cpuip=="rock"){
         document.getElementById("cpuimg").src="/asset/rockcpu.png";
         result="User Wins!"
+        document.getElementById("out").textContent=`${result}`;
         userpts+=1;
         updateScore(userpts,cpupts);
     }
     else if(cpuip=="paper"){
         document.getElementById("cpuimg").src="/asset/papercpu.png";
         result="It's a Tie!";
+        document.getElementById("out").textContent=`${result}`;
         cpupts+=0;
         userpts+=0;
         updateScore(userpts,cpupts);
@@ -71,6 +92,7 @@ function paper(){
     else if(cpuip=="scissors"){
         document.getElementById("cpuimg").src="/asset/scissorcpu.png";
         result="CPU Wins!";
+        document.getElementById("out").textContent=`${result}`;
         cpupts+=1;
         updateScore(userpts,cpupts);
     }
@@ -84,12 +106,14 @@ function scissors(){
     if(cpuip=="rock"){
         document.getElementById("cpuimg").src="/asset/rockcpu.png";
         result="CPU Wins!";
+        document.getElementById("out").textContent=`${result}`;
         cpupts+=1;
         updateScore(userpts,cpupts);
     }
     else if(cpuip=="paper"){
         document.getElementById("cpuimg").src="/asset/papercpu.png";
         result="User Wins!"
+        document.getElementById("out").textContent=`${result}`;
         userpts+=1;
         updateScore(userpts,cpupts);
         
@@ -97,6 +121,7 @@ function scissors(){
     else if(cpuip=="scissors"){
         document.getElementById("cpuimg").src="/asset/scissorcpu.png";
         result="It's a Tie!";
+        document.getElementById("out").textContent=`${result}`;
         cpupts+=0;
         userpts+=0;
         updateScore(userpts,cpupts);
@@ -120,7 +145,7 @@ function updateScore(user,cpu){
 function end(player){
     document.getElementById("retry").style.visibility="visible";
     document.getElementById("btnbox").style.visibility="hidden";
-    document.getElementById("result").textContent=`${player} Wins!`;
+    document.getElementById("result").textContent=`${player} wins the game!`;
 }
 
 function retry(){

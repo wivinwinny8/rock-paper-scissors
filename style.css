@@ -42,7 +42,7 @@ img{
 
 .img{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .content{
@@ -66,3 +66,23 @@ img{
     font-size: 40px;
     visibility: hidden;
 }
+
+#userimg{
+    animation-duration: 1s;
+}
+
+@keyframes cpuanimate {
+    0%{transform: rotate(0);}
+    25%{transform: rotate(-15deg);}
+    50%{transform: rotate(0);}
+    75%{transform: rotate(-15deg);}
+}
+
+@keyframes useranimate {
+    0%{transform: rotate(0);}
+    25%{transform: rotate(15deg);}
+    50%{transform: rotate(0);}
+    75%{transform: rotate(15deg);}
+}
+
+
